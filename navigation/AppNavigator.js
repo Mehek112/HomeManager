@@ -8,6 +8,7 @@ import DashboardScreen from "../screens/DashboardScreen";
 import HomeListScreen from "../screens/HomeListScreen";
 import RoomListScreen from "../screens/RoomListScreen";
 import InventoryScreen from "../screens/InventoryScreen";
+import InvoiceScreen from "../screens/InvoiceScreen"; // ✅ FIX ADDED
 
 const Stack = createNativeStackNavigator();
 
@@ -44,12 +45,19 @@ export default function AppNavigator() {
               {(props) => <RoomListScreen {...props} user={user} />}
             </Stack.Screen>
 
-            {/* 🔥 NEW INVENTORY SCREEN ROUTE */}
+            {/* INVENTORY */}
             <Stack.Screen name="Inventory">
               {(props) => <InventoryScreen {...props} user={user} />}
             </Stack.Screen>
+
+            {/* INVOICE SCREEN */}
+            <Stack.Screen name="InvoiceScreen">
+              {(props) => <InvoiceScreen {...props} user={user} />}
+            </Stack.Screen>
+
           </>
         )}
+
       </Stack.Navigator>
     </NavigationContainer>
   );
